@@ -4,7 +4,7 @@ Code Vision CLI is a powerful tool for detecting plagiarism in source code, draw
 
 This project harnesses the capabilities of well-regarded open-source compilers and parsers, notably [pycparser](https://github.com/eliben/pycparser), which is predominantly used for research and experimental endeavors. Code Vision CLI is particularly adept with the C99 standard, ensuring broad applicability and relevance in various coding environments.
 
-You can our related whitepaper here [CodeVision](https://www.academia.edu/42023173/Source_code_plagiarism_detection_engine_CodeVision_)
+You can check our whitepaper here [CodeVision](https://www.academia.edu/42023173/Source_code_plagiarism_detection_engine_CodeVision_)
 ### Contributions
 
 We openly welcome pull requests! If you're interested in contributing to the development of Code Vision CLI, your input and code contributions would be greatly appreciated.
