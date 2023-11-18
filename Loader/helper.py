@@ -1,5 +1,6 @@
 from pycparser import c_generator, c_ast
 
+
 class AbstractCGenerator(c_generator.CGenerator):
 
     def visit_Constant(self, n):
@@ -28,10 +29,10 @@ class AbstractCGenerator(c_generator.CGenerator):
 
     def _generate_struct_union(self, n, name):
         s = name
-        if(name == 'struct'):
-            s+= ' ' + ("STRUCT" or '')
-        elif(name == 'union'):
-            s+= ' ' + ("UNION" or '')
+        if name == 'struct':
+            s += ' ' + ("STRUCT" or '')
+        elif name == 'union':
+            s += ' ' + ("UNION" or '')
         if n.decls:
             s += '\n'
             s += self._make_indent()
@@ -45,7 +46,7 @@ class AbstractCGenerator(c_generator.CGenerator):
 
     def _generate_type(self, n, modifiers=[]):
         typ = type(n)
-        #~ print(n, modifiers)
+        # ~ print(n, modifiers)
 
         if typ == c_ast.TypeDecl:
             s = ''
@@ -60,12 +61,12 @@ class AbstractCGenerator(c_generator.CGenerator):
             for i, modifier in enumerate(modifiers):
                 if isinstance(modifier, c_ast.ArrayDecl):
                     nstr = "ARR"
-                    if (i != 0 and isinstance(modifiers[i - 1], c_ast.PtrDecl)):
+                    if i != 0 and isinstance(modifiers[i - 1], c_ast.PtrDecl):
                         nstr = '(' + nstr + ')'
                     nstr += '[' + self.visit(modifier.dim) + ']'
                 elif isinstance(modifier, c_ast.FuncDecl):
                     nstr = "FUNC"
-                    if (i != 0 and isinstance(modifiers[i - 1], c_ast.PtrDecl)):
+                    if i != 0 and isinstance(modifiers[i - 1], c_ast.PtrDecl):
                         nstr = '(' + nstr + ')'
                     nstr += '(' + self.visit(modifier.args) + ')'
                 elif isinstance(modifier, c_ast.PtrDecl):

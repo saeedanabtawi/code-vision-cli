@@ -1,11 +1,10 @@
-# function  that calculate union bettwen two lists of keywords
+# function  that calculate union between two lists of keywords
 def union(list_a, list_b):
-
     # ulist : is the union  list
- 	# copying list_b to union list
+    # copying list_b to union list
     ulist = list(list_b)
 
-    # take evey element in list_a then serach in list_b if dose not exist add it to the union list
+    # take evey element in list_a then search in list_b if does not exist add it to the union list
     for x in list_a:
         if not x in list_b:
             # add element to union list
@@ -13,13 +12,15 @@ def union(list_a, list_b):
 
     return ulist
 
-#function  that calculate intersection bettwen two lists of keywords
+
+# function  that calculate intersection between two lists of keywords
 def intersection(list_a, list_b):
     return [x for x in list_a if x in list_b]
 
-# fucntion to calcualte the similarity bettwen two lists
+
+# function to calculate the similarity between two lists
 def calculate_sim(list_a, list_b):
     try:
-        return (len(intersection(list_a, list_b)))/(len(union(list_a, list_b)))
+        return (len(intersection(list_a, list_b))) / (len(union(list_a, list_b)))
     except Exception as e:
-        print('[-] Error : '+str(e))
+        print('[-] Error : ' + str(e))
