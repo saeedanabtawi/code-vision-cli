@@ -3,9 +3,9 @@ import time
 import os
 import logging
 
-from Loader import load, filter
-from Similarity import similarity
-from Result import cluster
+from core.loader import load, filter
+from core.similarity import similarity
+from core.result import cluster
 
 
 def main():
