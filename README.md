@@ -1,9 +1,16 @@
+# Code Vision - Command Line Interface (CLI)
 
-# Code Vision - Command line
-Command line version of Code vision . The program is based on two papers about source code plagiarism detection. The first one is [A Clustering Approach for Detecting Plagiarism in Source Code Data sets](https://pdfs.semanticscholar.org/3e43/6af6f042c46cd43afa9341c7d7c45bdcb31f.pdf?_ga=1.200655531.400488828.1492426260)  and the second one is [A Hybrid Method forDetecting Source-code Plagiarism in Computer Programming Courses](https://pdfs.semanticscholar.org/3e43/6af6f042c46cd43afa9341c7d7c45bdcb31f.pdf?_ga=1.200655531.400488828.1492426260). The program detects plagiarism in a corpus of source files and illustrates the result in a visible form using weighted graph clustering algorithm. The project is built on well known open source compilers and parsers such as [pycparser](https://github.com/eliben/pycparser) which is used for research & experiment purposes,The project supports c99.
+Code Vision CLI is a powerful tool for detecting plagiarism in source code, drawing inspiration from two pivotal research papers in the field. The first paper, titled "A Clustering Approach for Detecting Plagiarism in Source Code Data sets," and the second, "A Hybrid Method for Detecting Source-code Plagiarism in Computer Programming Courses," provide the foundational methodologies for our program. This tool excels in analyzing a collection of source files, identifying instances of plagiarism, and presenting these findings through an intuitive visual format, utilizing a weighted graph clustering algorithm.
 
+This project harnesses the capabilities of well-regarded open-source compilers and parsers, notably [pycparser](https://github.com/eliben/pycparser), which is predominantly used for research and experimental endeavors. Code Vision CLI is particularly adept with the C99 standard, ensuring broad applicability and relevance in various coding environments.
 
-## Pull requests welcome!
+You can our related whitepaper here [CodeVision](https://www.academia.edu/42023173/Source_code_plagiarism_detection_engine_CodeVision_)
+### Contributions
 
-## License
-[MIT](https://github.com/saeedanabtawi/CodeVisionCommandline/blob/master/LICENSE)
+We openly welcome pull requests! If you're interested in contributing to the development of Code Vision CLI, your input and code contributions would be greatly appreciated.
+
+### License
+
+This project is released under the [MIT License](https://github.com/saeedanabtawi/CodeVisionCommandline/blob/master/LICENSE). Feel free to utilize, modify, and distribute this tool in accordance with the license specifications.
+
+---
