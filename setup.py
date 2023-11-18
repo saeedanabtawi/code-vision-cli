@@ -34,5 +34,5 @@ setup(
     ],
     packages=["core"],
     include_package_data=True,
-    install_requires=["networkx", "matplotlib", "argparse"]
+    install_requires=["networkx", "matplotlib", "argparse","pycparser"]
 )
