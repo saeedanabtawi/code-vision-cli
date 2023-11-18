@@ -7,8 +7,8 @@ from Loader import load, filter
 from Similarity import similarity
 from Result import cluster
 
-def main():
 
+def main():
     parser = argparse.ArgumentParser(description='Process code similarity.')
     parser.add_argument('-i', '--in_dir', required=True, help='Input directory must be in the project folder')
     parser.add_argument('-o', '--out_dir', required=True, help='Output directory must be in the project folder')
@@ -16,7 +16,6 @@ def main():
                         help='Algorithm to use: "jaccard" or "lcs"')
     parser.add_argument('-t', '--threshold', type=float, required=True, help='Threshold value between 0.00 and 1.00')
     args = parser.parse_args()
-
 
     # Check if input directory exists
     if not os.path.exists(args.in_dir):
