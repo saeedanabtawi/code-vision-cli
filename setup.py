@@ -1,6 +1,4 @@
 from setuptools import setup
-
-
 import os
 
 # The directory containing this file
@@ -10,15 +8,13 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(HERE, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-
 def fpath(name):
     return os.path.join(os.path.dirname(__file__), name)
-
 
 # This call to setup() does all the work
 setup(
     name="code-vision-cli",
-    version="0.1.0",
+    version="0.1.1",
     description="Code Vision",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -34,5 +30,10 @@ setup(
     ],
     packages=["core"],
     include_package_data=True,
-    install_requires=["networkx", "matplotlib", "argparse","pycparser"]
+    install_requires=["networkx", "matplotlib", "argparse", "pycparser"],
+    entry_points={
+        'console_scripts': [
+            'code-vision = main:main',
+        ],
+    },
 )
