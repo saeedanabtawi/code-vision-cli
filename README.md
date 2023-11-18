@@ -1,4 +1,12 @@
 # Code Vision - Command Line Interface (CLI)
+![](https://img.shields.io/pypi/v/code-vision-cli)
+![](https://img.shields.io/pypi/wheel/code-vision-cli)
+![](https://img.shields.io/pypi/pyversions/code-vision-cli)
+![](https://img.shields.io/pypi/l/code-vision-cli)
+![](https://img.shields.io/github/repo-size/saeedanabtawi/code-vision-cli)
+![](https://img.shields.io/github/directory-file-count/saeedanabtawi/code-vision-cli)
+![](https://img.shields.io/github/languages/code-size/saeedanabtawi/code-vision-cli)
+![](https://img.shields.io/github/actions/workflow/status/saeedanabtawi/code-vision-cli/workflow.yml)
 
 Code Vision CLI is a powerful tool for detecting plagiarism in source code, drawing inspiration from two pivotal research papers in the field. The first paper, titled "A Clustering Approach for Detecting Plagiarism in Source Code Data sets," and the second, "A Hybrid Method for Detecting Source-code Plagiarism in Computer Programming Courses," provide the foundational methodologies for our program. This tool excels in analyzing a collection of source files, identifying instances of plagiarism, and presenting these findings through an intuitive visual format, utilizing a weighted graph clustering algorithm.
 
