@@ -16,15 +16,28 @@ You can check our whitepaper here [CodeVision](https://www.academia.edu/42023173
 
 ### Installation
 ```
-pip install demo-multiply
+pip install code-vision-cli
 ```
 
-
-### usage
+### Usage
 ```
-pip install demo-multiply
+python code-vision-cli -i input -o output -a lcs -t 0.8
 ```
 
+### Manual 
+
+```
+  -h, --help            show this help message and exit
+  -i IN_DIR, --in_dir IN_DIR
+                        Input directory must be in the project folder
+  -o OUT_DIR, --out_dir OUT_DIR
+                        Output directory must be in the project folder
+  -a {jaccard,lcs}, --algorithm {jaccard,lcs}
+                        Algorithm to use: "jaccard" or "lcs"
+  -t THRESHOLD, --threshold THRESHOLD
+                        Threshold value between 0.00 and 1.00
+
+```
 
 ### Contributions
 

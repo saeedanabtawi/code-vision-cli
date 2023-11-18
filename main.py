@@ -3,9 +3,9 @@ import time
 import os
 import logging
 
-from core.loader import load, filter
-from core.similarity import similarity
-from core.result import cluster
+from code_vision_cli.loader import load, filter
+from code_vision_cli.similarity import similarity
+from code_vision_cli.result import cluster
 
 
 def main():

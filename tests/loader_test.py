@@ -1,5 +1,5 @@
 import unittest
-from core.loader import load, filter, helper
+from code_vision_cli.loader import load, filter, helper
 
 class MockCode:
     def __init__(self, text):
