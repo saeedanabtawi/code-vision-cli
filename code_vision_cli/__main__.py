@@ -1,4 +1,5 @@
 import argparse
+import sys
 import time
 import os
 import logging
@@ -50,4 +51,4 @@ def main():
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-    main()
+    sys.exit(main())
