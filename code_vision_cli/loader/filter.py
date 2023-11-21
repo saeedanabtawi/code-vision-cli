@@ -1,6 +1,8 @@
 import re
 import sys
 
+from tqdm import tqdm
+
 sys.path.extend(['.', '..'])
 
 from pycparser import c_parser, c_generator
@@ -87,10 +89,16 @@ def c_code_keyword_list(c_code):
 # @TODO This func need refactor
 def jaccard_filter(code_dict):
     jaccard_ready_dict = {}
-    for key, code in code_dict.items():
-        # @TODO reformat_c_code func is bad
-        c_code = reformat_c_code(filter(code))
-        jaccard_ready_dict[key] = c_code_keyword_list(c_code)
+
+    # Create a tqdm progress bar with the total number of items
+    with tqdm(total=len(code_dict), desc="[+] Applying jaccard filter", unit='file') as pbar:
+        for key, code in code_dict.items():
+            # @TODO reformat_c_code func is bad
+            c_code = reformat_c_code(filter(code))
+            jaccard_ready_dict[key] = c_code_keyword_list(c_code)
+
+            # Update the progress bar
+            pbar.update(1)
 
     return jaccard_ready_dict
 
@@ -114,7 +122,7 @@ def normalize_abstract_c_code(abstract_c_code):
     maped_tokens = []
 
     for token in tokens:
-        if (token in map):
+        if token in map:
             maped_tokens.append(map[token])
         else:
             maped_tokens.append(token)
@@ -124,10 +132,16 @@ def normalize_abstract_c_code(abstract_c_code):
 # @TODO This func need refactor, reformat_c_code() should be in normalize_abstract_c_code()
 def lcs_filter(code_dict):
     lcs_ready_dict = {}
-    for key, code in code_dict.items():
-        abstract_c_code = generate_abstract_c_code(filter(code))
-        abstract_c_code = reformat_c_code(abstract_c_code)
 
-        lcs_ready_dict[key] = normalize_abstract_c_code(abstract_c_code)
+    # Create a tqdm progress bar with the total number of items
+    with tqdm(total=len(code_dict), desc="[+] Applying lcs filter", unit='file') as pbar:
+        for key, code in code_dict.items():
+            abstract_c_code = generate_abstract_c_code(filter(code))
+            abstract_c_code = reformat_c_code(abstract_c_code)
+
+            lcs_ready_dict[key] = normalize_abstract_c_code(abstract_c_code)
+
+            # Update the progress bar
+            pbar.update(1)
 
     return lcs_ready_dict

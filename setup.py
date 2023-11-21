@@ -13,7 +13,7 @@ def long_description():
         return f.read()
 
 
-install_requires = ["networkx", "matplotlib", "argparse", "pycparser"]
+install_requires = ["networkx", "matplotlib", "argparse", "pycparser","tqdm"]
 
 
 def fpath(name):

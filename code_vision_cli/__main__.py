@@ -4,6 +4,8 @@ import time
 import os
 import logging
 
+from tqdm import tqdm
+
 from code_vision_cli.loader import load, filter
 from code_vision_cli.similarity import similarity
 from code_vision_cli.result import cluster
@@ -43,10 +45,13 @@ def main():
 
     # Build and save the graph
     graph_filename = os.path.join(args.out_dir, f"{args.algorithm}_out_weighted_graph.png")
-    cluster.build_graph(cluster.list_to_graph(similarity_graph_data), args.threshold, graph_filename)
+    # Create a tqdm progress bar with the total number of items
+    with tqdm(total=1, desc="[+] Rendering cluster", unit='cluster') as pbar:
+        cluster.build_graph(cluster.list_to_graph(similarity_graph_data), args.threshold, graph_filename)
+        pbar.update(1)
 
     end = time.time()
-    logging.info(f"Processing completed in {end - start} seconds.")
+    print(f"[+] Processing completed in {end - start} seconds.")
 
 
 if __name__ == '__main__':
